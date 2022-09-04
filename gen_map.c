@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:45:48 by maparigi          #+#    #+#             */
-/*   Updated: 2022/09/03 18:19:01 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/04 18:25:56 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	init_texture(t_gdata *sl)
 	sl->game_t.exit = mlx_xpm_file_to_image(sl->win.mlx,
 			"so_long_sprites/exit.xpm", &hw[0], &hw[1]);
 	sl->game_t.player_mr = mlx_xpm_file_to_image(sl->win.mlx,
-			"so_long_sprites/Sprite_1.1.xpm", &hw[0], &hw[1]);
+			"so_long_sprites/MR.xpm", &hw[0], &hw[1]);
 	sl->game_t.player_ml = mlx_xpm_file_to_image(sl->win.mlx,
-			"so_long_sprites/Sprite_1.xpm", &hw[0], &hw[1]);
+			"so_long_sprites/ML.xpm", &hw[0], &hw[1]);
 	if (!sl->game_t.collectibles || !sl->game_t.floor || !sl->game_t.walls
 		|| !sl->game_t.player_l || !sl->game_t.player_r || !sl->game_t.exit
 		|| !sl->game_t.player_mr || !sl->game_t.player_ml)

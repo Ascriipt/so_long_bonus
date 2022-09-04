@@ -6,7 +6,7 @@
 #    By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/05 16:43:51 by maparigi          #+#    #+#              #
-#    Updated: 2022/09/03 15:04:49 by maparigi         ###   ########.fr        #
+#    Updated: 2022/09/04 18:37:10 by maparigi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRCS =	main.c			\
 		moves.c			\
 		gen_map.c		\
 		check_map.c		\
+		print_moves.c	\
 		mlx_utilities.c	\
 
 OBJS = ${SRCS:.c=.o}

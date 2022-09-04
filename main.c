@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 16:34:52 by maparigi          #+#    #+#             */
-/*   Updated: 2022/07/13 14:39:13 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/04 18:35:31 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,7 @@ int	event_manager(int keycode, t_gdata *sl)
 {
 	if (keycode == 119 || keycode == 115
 		|| keycode == 100 || keycode == 97)
-	{
-		sl->mv++;
-		ft_putstr_fd("Moves : ", STDERR_FILENO);
-		ft_putnbr_fd(sl->mv, STDOUT_FILENO);
-		ft_putchar_fd('\n', STDOUT_FILENO);
-	}
+		print_moves(sl);
 	if (keycode == 65307)
 		close_game(sl);
 	if (keycode == 119)

@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 16:26:48 by maparigi          #+#    #+#             */
-/*   Updated: 2022/09/03 18:13:25 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/04 18:36:16 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	map_main(t_coord *map);
 /*--------map_generation-------*/
 
 void	gen_map(t_coord map, t_window *win, t_texture game_t);
+void	print_moves(t_gdata *sl);
 
 /*-------------exit-------------*/
 
