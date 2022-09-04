@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 02:30:14 by maparigi          #+#    #+#             */
-/*   Updated: 2022/09/04 18:55:14 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/04 20:51:35 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,12 @@ void	move_up(int *px, int *py, char **map, t_gdata *sl)
 	mp_swop(&(map[*py - 1][*px]), &(map[*py][*px]));
 	mlx_put_image_to_window(sl->win.mlx, sl->win.window,
 		sl->game_t.floor, (*px * 64), (*py * 64));
-	mlx_put_image_to_window(sl->win.mlx, sl->win.window,
-		sl->game_t.player_r, (*px * 64), ((*py - 1) * 64));
+	if (sl->map.py % 2 == 0)
+		mlx_put_image_to_window(sl->win.mlx, sl->win.window,
+			sl->game_t.player_mr, (*px * 64), ((*py - 1) * 64));
+	else
+		mlx_put_image_to_window(sl->win.mlx, sl->win.window,
+			sl->game_t.player_r, (*px * 64), ((*py - 1) * 64));
 	*py -= 1;
 }
 
@@ -75,8 +79,12 @@ void	move_down(int *px, int *py, char **map, t_gdata *sl)
 	mp_swop(&(map[*py + 1][*px]), &(map[*py][*px]));
 	mlx_put_image_to_window(sl->win.mlx, sl->win.window,
 		sl->game_t.floor, (*px * 64), (*py * 64));
-	mlx_put_image_to_window(sl->win.mlx, sl->win.window,
-		sl->game_t.player_r, (*px * 64), ((*py + 1) * 64));
+	if (sl->map.py % 2 == 0)
+		mlx_put_image_to_window(sl->win.mlx, sl->win.window,
+			sl->game_t.player_mr, (*px * 64), ((*py + 1) * 64));
+	else
+		mlx_put_image_to_window(sl->win.mlx, sl->win.window,
+			sl->game_t.player_r, (*px * 64), ((*py + 1) * 64));
 	*py += 1;
 }
 
@@ -99,8 +107,12 @@ void	move_left(int *px, int *py, char **map, t_gdata *sl)
 	mp_swop(&(map[*py][*px - 1]), &(map[*py][*px]));
 	mlx_put_image_to_window(sl->win.mlx, sl->win.window,
 		sl->game_t.floor, (*px * 64), (*py * 64));
-	mlx_put_image_to_window(sl->win.mlx, sl->win.window,
-		sl->game_t.player_l, ((*px - 1) * 64), (*py * 64));
+	if (sl->map.px % 2 == 0)
+		mlx_put_image_to_window(sl->win.mlx, sl->win.window,
+			sl->game_t.player_ml, ((*px - 1) * 64), (*py * 64));
+	else
+		mlx_put_image_to_window(sl->win.mlx, sl->win.window,
+			sl->game_t.player_l, ((*px - 1) * 64), (*py * 64));
 	*px -= 1;
 }
 
@@ -123,7 +135,11 @@ void	move_right(int *px, int *py, char **map, t_gdata *sl)
 	mp_swop(&(map[*py][*px + 1]), &(map[*py][*px]));
 	mlx_put_image_to_window(sl->win.mlx, sl->win.window,
 		sl->game_t.floor, (*px * 64), (*py * 64));
-	mlx_put_image_to_window(sl->win.mlx, sl->win.window,
-		sl->game_t.player_r, ((*px + 1) * 64), (*py * 64));
+	if (sl->map.px % 2 == 0)
+		mlx_put_image_to_window(sl->win.mlx, sl->win.window,
+			sl->game_t.player_mr, ((*px + 1) * 64), (*py * 64));
+	else
+		mlx_put_image_to_window(sl->win.mlx, sl->win.window,
+			sl->game_t.player_r, ((*px + 1) * 64), (*py * 64));
 	*px += 1;
 }
