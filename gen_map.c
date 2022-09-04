@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:45:48 by maparigi          #+#    #+#             */
-/*   Updated: 2022/09/04 18:25:56 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/04 18:49:17 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	free_texturexmap(t_texture *game_t, t_window *win, t_coord *map)
 		mlx_destroy_image(win->mlx, game_t->player_l);
 	if (game_t->player_r)
 		mlx_destroy_image(win->mlx, game_t->player_r);
+	if (game_t->ennemy)
+		mlx_destroy_image(win->mlx, game_t->ennemy);
 	if (game_t->walls)
 		mlx_destroy_image(win->mlx, game_t->walls);
 	if (game_t->floor)
@@ -54,9 +56,11 @@ void	init_texture(t_gdata *sl)
 			"so_long_sprites/MR.xpm", &hw[0], &hw[1]);
 	sl->game_t.player_ml = mlx_xpm_file_to_image(sl->win.mlx,
 			"so_long_sprites/ML.xpm", &hw[0], &hw[1]);
+	sl->game_t.ennemy = mlx_xpm_file_to_image(sl->win.mlx,
+			"so_long_sprites/ennemy_l.xpm", &hw[0], &hw[1]);
 	if (!sl->game_t.collectibles || !sl->game_t.floor || !sl->game_t.walls
 		|| !sl->game_t.player_l || !sl->game_t.player_r || !sl->game_t.exit
-		|| !sl->game_t.player_mr || !sl->game_t.player_ml)
+		|| !sl->game_t.player_mr || !sl->game_t.player_ml || !sl->game_t.ennemy)
 		close_game(sl);
 }
 
@@ -87,6 +91,9 @@ static void	match_to_map(char c, int xy[2], t_window *win, t_texture game_t)
 	else if (c == 'C')
 		mlx_put_image_to_window(win->mlx, win->window,
 			game_t.collectibles, xy[0], xy[1]);
+	else if (c == 'e')
+		mlx_put_image_to_window(win->mlx, win->window,
+			game_t.ennemy, xy[0], xy[1]);
 }
 
 void	gen_map(t_coord map, t_window *win, t_texture game_t)

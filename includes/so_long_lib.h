@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 16:26:48 by maparigi          #+#    #+#             */
-/*   Updated: 2022/09/04 18:36:16 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/04 18:40:25 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_textures
 	void	*player_ml;
 	void	*player_r;
 	void	*player_l;
+	void	*ennemy;
 	void	*walls;
 	void	*floor;
 	void	*exit;
