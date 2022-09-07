@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 16:26:48 by maparigi          #+#    #+#             */
-/*   Updated: 2022/09/04 18:40:25 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/07 21:50:11 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ typedef struct s_gdata
 
 void	free_texturexmap(t_texture *game_t, t_window *win, t_coord *map);
 void	my_pixel_put(t_data *data, int x, int y, int color);
-void	find_player(int *px, int *py, char **map);
+void	find_player(int *px, int *py, char **map, char c);
 void	my_mlx_init(t_window *window);
 void	init_texture(t_gdata *sl);
 
@@ -107,9 +107,13 @@ void	move_right(int *px, int *py, char **map, t_gdata *sl);
 
 /*------------utils------------*/
 
-void	is_ber(char *filename);
 int		ft_sizeof(int n, int ln);
+void	is_ber(char *filename);
 void	mp_swop(char *x, char *y);
 void	count_collectibles(int *t_col, char **map);
+
+/*------------flood------------*/
+
+void	flood_fill(char **map);
 
 #endif

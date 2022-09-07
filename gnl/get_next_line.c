@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 19:35:42 by maparigi          #+#    #+#             */
-/*   Updated: 2022/06/11 18:34:51 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/07 22:16:39 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char	*get_next_line(int fd)
 			break ;
 		buffer[len] = '\0';
 		stash = ft_gnl_strjoin(stash, buffer, -1, -1);
+		if (!stash)
+			return (NULL);
 	}
 	line = ft_fill_line(stash);
 	stash = ft_get_next(stash);

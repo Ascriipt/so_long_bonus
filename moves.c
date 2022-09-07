@@ -6,13 +6,13 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 02:30:14 by maparigi          #+#    #+#             */
-/*   Updated: 2022/09/04 20:51:35 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/07 20:19:15 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_lib.h"
 
-void	find_player(int *px, int *py, char **map)
+void	find_player(int *px, int *py, char **map, char c)
 {
 	int	i;
 	int	j;
@@ -23,7 +23,7 @@ void	find_player(int *px, int *py, char **map)
 		j = -1;
 		while (map[i][++j])
 		{
-			if (map[i][j] == 'P')
+			if (map[i][j] == c)
 			{
 				*px = j;
 				*py = i;

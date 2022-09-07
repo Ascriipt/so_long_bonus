@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 22:02:07 by maparigi          #+#    #+#             */
-/*   Updated: 2022/06/12 13:03:33 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/07 22:16:58 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ char	*ft_gnl_strjoin(char *s1, char *s2, int i, int j)
 	if (!s1)
 	{
 		s1 = (char *)(malloc(sizeof(char) * 1));
+		if (!s1)
+			return (NULL);
 		s1[0] = '\0';
 	}
 	if (!s2 || !s1)
