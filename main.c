@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 16:34:52 by maparigi          #+#    #+#             */
-/*   Updated: 2022/09/07 22:22:20 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/08 01:58:42 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	my_init(t_gdata *sl)
 		pexit_failfree("mlx pointer init error\n", sl->map.map);
 	sl->win.window = mlx_new_window(sl->win.mlx, ((sl->map.x) * 64),
 			((sl->map.y) * 64), "so_long");
+	if (!sl->win.window)
+		return (NULL);
 	init_texture(sl);
 	gen_map(sl->map, &(sl->win), sl->game_t);
 	find_player(&(sl->map.px), &(sl->map.py), sl->map.map, 'P');
