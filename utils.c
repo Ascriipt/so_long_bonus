@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 02:50:38 by maparigi          #+#    #+#             */
-/*   Updated: 2022/07/13 14:43:20 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:04:14 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	is_ber(char *filename)
 		pexit_failure("file is not a .ber");
 	while (filename[i] && i < ln - 4)
 		i++;
-	if (strncmp(filename + i, ".ber", 4))
+	if (ft_strncmp(filename + i, ".ber", 4))
 		pexit_failure("file is not a .ber");
 }
 
@@ -47,7 +47,7 @@ void	mp_swop(char *x, char *y)
 
 	swop = *x;
 	*x = *y;
-	*y = swop; 
+	*y = swop;
 }
 
 void	count_collectibles(int *t_col, char **map)
