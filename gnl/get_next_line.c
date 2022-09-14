@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 19:35:42 by maparigi          #+#    #+#             */
-/*   Updated: 2022/09/07 22:16:39 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/14 17:42:18 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ char	*get_next_line(int fd)
 			return (NULL);
 	}
 	line = ft_fill_line(stash);
-	stash = ft_get_next(stash);
+	if (!line)
+		free(stash);
+	else
+		stash = ft_get_next(stash);
 	return (line);
 }
